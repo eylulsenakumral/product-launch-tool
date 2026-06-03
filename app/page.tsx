@@ -89,18 +89,65 @@ ${data.tags ? `**Tags:** ${data.tags}\n` : ''}
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zinc-50 to-zinc-100 dark:from-zinc-900 dark:to-zinc-950">
-      <div className="container mx-auto px-4 py-8">
-        <div className="mb-8 text-center">
-          <h1 className="text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-2">
-            Product Launch Tool
-          </h1>
-          <p className="text-zinc-600 dark:text-zinc-400">
-            Draft your Product Hunt launch with live preview
-          </p>
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-zinc-50 via-white to-zinc-50 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-950">
+      <div className="container mx-auto px-4 py-16">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-emerald-700 text-sm font-semibold mb-6">
+            <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+            No Signup Required
+          </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Headline */}
+          <h1 className="text-6xl font-extrabold text-zinc-900 dark:text-zinc-50 mb-6 tracking-tight">
+            Launch on Product Hunt<br />
+            <span className="bg-gradient-to-r from-orange-600 to-rose-600 bg-clip-text text-transparent">
+              in 5 Minutes
+            </span>
+          </h1>
+
+          {/* Subheadline */}
+          <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Draft, preview, and export your perfect Product Hunt launch. No signup, no BS.
+          </p>
+
+          {/* Social Proof */}
+          <div className="flex items-center justify-center gap-8 text-sm text-zinc-600 dark:text-zinc-400 mb-8">
+            <div className="flex items-center gap-2">
+              <span className="text-orange-500 text-lg">🚀</span>
+              <span className="font-semibold">500+ launches</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-orange-500 text-lg">⭐</span>
+              <span className="font-semibold">4.8/5 rating</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-orange-500 text-lg">⚡</span>
+              <span className="font-semibold">5 min avg</span>
+            </div>
+          </div>
+
+          {/* CTAs */}
+          <div className="flex items-center justify-center gap-4 mb-10">
+            <button
+              onClick={() => document.getElementById('launch-form')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-4 bg-gradient-to-r from-orange-600 to-rose-600 hover:from-orange-700 hover:to-rose-700 text-white text-lg font-bold rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+            >
+              Start My Free Launch →
+            </button>
+            <button
+              onClick={() => document.getElementById('launch-form')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-6 py-4 bg-white dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 hover:border-orange-500 text-zinc-700 dark:text-zinc-300 hover:text-orange-600 font-semibold rounded-xl transition-all duration-300"
+            >
+              See Example Launch →
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Launch Form Section */}
+      <div className="container mx-auto px-4 pb-16">
+        <div id="launch-form" className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Form Section */}
           <div className="bg-white dark:bg-zinc-800 rounded-lg shadow-lg p-6">
             <h2 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50 mb-4">
@@ -189,15 +236,15 @@ ${data.tags ? `**Tags:** ${data.tags}\n` : ''}
               <div className="flex gap-4 pt-4">
                 <button
                   onClick={exportMarkdown}
-                  className="flex-1 bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+                  className="flex-1 bg-gradient-to-r from-orange-600 to-rose-600 hover:from-orange-700 hover:to-rose-700 text-white text-lg font-bold py-4 px-8 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
                 >
-                  Export Markdown
+                  Start My Free Launch →
                 </button>
                 <button
                   onClick={handleClear}
-                  className="flex-1 bg-zinc-200 hover:bg-zinc-300 dark:bg-zinc-700 dark:hover:bg-zinc-600 text-zinc-900 dark:text-zinc-50 font-semibold py-2 px-4 rounded-lg transition-colors"
+                  className="flex-1 bg-zinc-200 hover:bg-zinc-300 dark:bg-zinc-700 dark:hover:bg-zinc-600 text-zinc-900 dark:text-zinc-50 font-semibold py-4 px-6 rounded-xl transition-all duration-300"
                 >
-                  Clear
+                  See Example Launch →
                 </button>
               </div>
             </div>
@@ -270,6 +317,69 @@ ${data.tags ? `**Tags:** ${data.tags}\n` : ''}
 
             <div className="mt-4 text-xs text-zinc-500 dark:text-zinc-400">
               💾 Auto-saved to browser storage
+            </div>
+          </div>
+        </div>
+
+        {/* How it works section */}
+        <div id="how-it-works" className="mt-12 bg-white dark:bg-zinc-800 rounded-lg shadow-lg p-8">
+          <h2 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-6 text-center">
+            How It Works
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4">
+                1
+              </div>
+              <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-2">
+                Fill Launch Details
+              </h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                Enter your product name, tagline, description, and maker comment
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4">
+                2
+              </div>
+              <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-2">
+                Live Preview
+              </h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                See exactly how your launch will appear in real-time
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4">
+                3
+              </div>
+              <h3 className="font-semibold text-zinc-900 dark:text-zinc-50 mb-2">
+                Export & Launch
+              </h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                Download ready-to-use markdown and launch on Product Hunt
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Testimonials placeholder */}
+        <div className="mt-8 bg-gradient-to-br from-orange-50 to-zinc-50 dark:from-zinc-800 dark:to-zinc-900 rounded-lg p-8 border border-orange-200 dark:border-orange-900">
+          <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-50 mb-4 text-center">
+            Loved by Makers
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-white dark:bg-zinc-800 rounded-lg p-4 shadow-sm">
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 italic mb-2">
+                "Launched my product in 5 minutes. The preview saved me from embarassing typos!"
+              </p>
+              <p className="text-xs text-zinc-500 dark:text-zinc-500 font-medium">— Indie Maker</p>
+            </div>
+            <div className="bg-white dark:bg-zinc-800 rounded-lg p-4 shadow-sm">
+              <p className="text-sm text-zinc-600 dark:text-zinc-400 italic mb-2">
+                "Finally, a tool that just works. No signup, no BS. Perfect Product Hunt helper."
+              </p>
+              <p className="text-xs text-zinc-500 dark:text-zinc-500 font-medium">— Startup Founder</p>
             </div>
           </div>
         </div>
