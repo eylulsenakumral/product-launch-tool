@@ -1,20 +1,37 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX";
 
 export const metadata: Metadata = {
   title: "Product Hunt Launch Draft Tool",
   description: "Draft and preview your Product Hunt launch in real-time",
+  openGraph: {
+    title: "Product Hunt Launch Draft Tool",
+    description: "Draft and preview your Product Hunt launch in real-time. Save your progress, export to markdown, and launch with confidence.",
+    type: "website",
+    url: "https://eylulsenakumral.github.io/product-launch-tool/",
+    siteName: "Product Hunt Launch Tool",
+    images: [
+      {
+        url: "https://eylulsenakumral.github.io/product-launch-tool/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Product Hunt Launch Draft Tool",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Product Hunt Launch Draft Tool",
+    description: "Draft and preview your Product Hunt launch in real-time. Save your progress, export to markdown, and launch with confidence.",
+    site: "@producthunt",
+    creator: "@tolgabrk",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -22,13 +39,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const gaId = process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX";
-
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en">
       <head>
         {process.env.NODE_ENV === "production" && (
           <>

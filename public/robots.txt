@@ -1,0 +1,6 @@
+# Allow all bots
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://eylulsenakumral.github.io/product-launch-tool/sitemap.xml
