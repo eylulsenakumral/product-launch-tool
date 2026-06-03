@@ -61,7 +61,22 @@ export default function RootLayout({
           </>
         )}
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+        <footer className="bg-zinc-50 dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 mt-auto">
+          <div className="container mx-auto px-4 py-6">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+              <div className="text-sm text-zinc-600 dark:text-zinc-400">
+                Built by <a href="https://github.com/eylulsenakumral" target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:text-orange-600">@eylulsenakumral</a>
+              </div>
+              <div className="flex gap-6 text-sm">
+                <a href="/faq" className="text-zinc-600 dark:text-zinc-400 hover:text-orange-500 dark:hover:text-orange-400">FAQ</a>
+                <a href="https://github.com/eylulsenakumral/product-launch-tool" target="_blank" rel="noopener noreferrer" className="text-zinc-600 dark:text-zinc-400 hover:text-orange-500 dark:hover:text-orange-400">GitHub</a>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </body>
     </html>
   );
 }
